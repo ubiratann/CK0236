@@ -39,7 +39,7 @@ Onde o **tipo** pode ser:
 
 ### Convenções de branchs:  
 
-- A branch ```master``` possui a última versão estável do projeto.
+- A branch ```main``` possui a última versão estável do projeto.
 
 - A branch ```develop``` possui a versão mais atualizada do projeto que ainda está em estágio de desenvolvimento e/ou teste.
 
@@ -53,4 +53,4 @@ Onde o **tipo** pode ser:
 
   2. **bugfix**: Uma branch do tipo **bugfix** cria um ramo no repositório onde haverão alterações no código como refatoração ou correção de bugs.
 
-  As novas branchs sempre devem ser criadas a partir da branch ```develop``` e ao terem suas atividades concluidas deve ser feito o merge com ```develop```, a branch ```master``` só é alterada através de merges com a branch ```develop``` sob revisão e teste das alterações.
+  As novas branchs sempre devem ser criadas a partir da branch ```develop``` e ao terem suas atividades concluidas deve ser feito o merge com ```develop```, a branch ```main``` só é alterada através de merges com a branch ```develop``` sob revisão e teste das alterações.
