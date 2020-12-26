@@ -1,0 +1,116 @@
+ion-content{
+  --background: #2e0f47;
+}
+
+ion-button{
+    --background: #f5f5f5 !important;
+    --background-hover: #650eab !important;
+    --color: #2e0f47 !important;
+    --color-hover: #f5f5f5 !important;
+}
+
+ion-label{
+  color: #f5f5f5 !important;
+}
+
+ion-item{
+  --color: #f5f5f5 !important;
+  --highlight-color-focused: #f5f5f5 !important;
+  --background: #2e0f47 !important;
+}
+
+#mensagemTopo{
+  display: flex;
+  align-items: flex-start;
+}
+
+#content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#containerCriacao{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+#containerEstados{
+  min-width: 80%;
+  max-width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+
+#listaAFazer {
+  background-color: #52497a;
+  padding: 20px;
+
+  ion-item{
+    --background: #52497a !important;
+
+  }
+  ion-button{
+      --background: #f5f5f5 !important;
+      --background-hover: #650eab !important;
+      --color: #2e0f47 !important;
+      --color-hover: #2e0f47 !important;
+  }
+
+
+}
+
+#listaFazendo {
+  background-color: #703e9c;
+  padding: 20px;
+
+  ion-item{
+    --background: #703e9c !important;
+  }
+
+  ion-button{
+      --background: #f5f5f5 !important;
+      --background-hover: #650eab !important;
+      --color: #2e0f47 !important;
+      --color-hover: #2e0f47 !important;
+  }
+}
+
+#listaFeito {
+  background-color: #8f3e9c;
+  padding: 20px;
+
+  ion-item{
+    --background: #8f3e9c !important;
+  }
+
+  ion-button{
+      --background: #f5f5f5 !important;
+      --background-hover: #650eab !important;
+      --color: #2e0f47 !important;
+      --color-hover: #2e0f47 !important;
+  }
+}
+
+.containerGenerico{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+
+.containerComBorda{
+  padding: 10px;
+  margin-top: 20px;
+  border: solid 1px #f5f5f5;
+  border-radius: 5px;
+}

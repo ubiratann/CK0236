@@ -1,0 +1,133 @@
+
+<ion-content >
+  <div id="content">
+
+
+    <form (ngSubmit)="submitAtividade()">
+
+      <!-- Nesse container estara presente uma sessao de criacao de atividades -->
+      <div  class="containerGenerico containerComBorda ">
+        <div id="mensagemTopo">
+          <ion-label  position="floating">Crie aqui uma atividade :)</ion-label>
+        </div>
+
+        <!-- Titulo da atividade -->
+        <ion-item class="containerComBorda">
+          <ion-label position="floating">Título:</ion-label>
+          <ion-input [(ngModel)]="atividade.titulo" name="titulo" placeholder="Insira um título aqui"></ion-input>
+        </ion-item>
+
+        <!-- Descrição da atividade -->
+        <ion-item class="containerComBorda">
+          <ion-label position="floating">Descrição:</ion-label>
+          <ion-textarea [(ngModel)]="atividade.descricao" rows="6" cols="20" name="descricao" placeholder="Insira uma descrição aqui"></ion-textarea>
+        </ion-item>
+
+        <!-- Botão de submeter atividade -->
+        <ion-item>
+          <ion-button mode="ios"  type="submit"   expand="block" >Cadastrar atividade <ion-icon style="margin-left: 10px;" name="newspaper-outline"></ion-icon></ion-button>
+        </ion-item>
+
+      </div>
+
+    </form>
+
+
+    <!-- Neste container teremos 3 containers que possue atividades de seus respectivos estados -->
+    <div id="containerEstados">
+
+      <!-- Container com ativdades em aberto -->
+      <div id="listaAFazer" class="containerGenerico containerComBorda">
+        <div >
+          <ion-label  position="floating">À FAZER</ion-label>
+        </div>
+
+        <div class="containerGenerico containerComBorda" *ngFor="let atividade of lista_a_fazer">
+          <div>
+            <ion-label  position="floating">Criado em {{converterData(atividade.data_criacao)}}</ion-label>
+          </div>
+
+          <ion-item class="containerComBorda">
+            <ion-input value="{{atividade.titulo}}" readonly="true"></ion-input>
+          </ion-item>
+
+          <ion-item class="containerComBorda">
+            <ion-textarea rows="6" cols="20" readonly="true" value="{{atividade.descricao}}"></ion-textarea>
+          </ion-item>
+
+          <div class="containerGenerico">
+            <ion-item>
+              <ion-button mode="ios"  (click)="fazerAtividade(atividade)">Fazer atividade<ion-icon style="margin-left: 10px;" name="arrow-forward-circle-outline"></ion-icon></ion-button>
+            </ion-item>
+            <ion-item>
+              <ion-button mode="ios"  (click)="excluirAtividade(atividade)">Excluir atividade<ion-icon style="margin-left: 10px;" name="trash-outline"></ion-icon></ion-button>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+
+      <!-- Container com atividades em execução -->
+      <div id="listaFazendo" class="containerGenerico containerComBorda">
+        <div >
+          <ion-label  position="floating">FAZENDO</ion-label>
+        </div>
+
+        <div class="containerGenerico containerComBorda" *ngFor="let atividade of lista_fazendo">
+          <div>
+            <ion-label  position="floating">Criado em {{converterData(atividade.data_criacao)}}</ion-label>
+          </div>
+
+          <ion-item class="containerComBorda">
+            <ion-input value="{{atividade.titulo}}" readonly="true"></ion-input>
+          </ion-item>
+
+          <ion-item class="containerComBorda">
+            <ion-textarea rows="6" cols="20" readonly="true" value="{{atividade.descricao}}"></ion-textarea>
+          </ion-item>
+
+          <div class="containerGenerico">
+            <ion-item>
+              <ion-button mode="ios"  (click)="concluirAtividade(atividade)">Concluir atividade<ion-icon style="margin-left: 10px;" name="checkmark-circle-outline"></ion-icon></ion-button>
+            </ion-item>
+            <ion-item>
+              <ion-button mode="ios"  (click)="pausarAtividade(atividade)">Pausar atividade<ion-icon style="margin-left: 10px;" name="pause-circle-outline"></ion-icon></ion-button>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+
+      <!-- Container com atividades encerradas -->
+      <div id="listaFeito" class="containerGenerico containerComBorda">
+        <div >
+          <ion-label  position="floating">FEITO</ion-label>
+        </div>
+
+        <div class="containerGenerico containerComBorda" *ngFor="let atividade of lista_concluidos">
+          <div>
+            <ion-label  position="floating">Criado em {{converterData(atividade.data_criacao)}}</ion-label>
+          </div>
+          <div>
+            <ion-label  position="floating">Concluído em {{converterData(atividade.data_finalizacao)}}</ion-label>
+          </div>
+
+          <ion-item class="containerComBorda">
+            <ion-input value="{{atividade.titulo}}" readonly="true"></ion-input>
+          </ion-item>
+
+          <ion-item class="containerComBorda">
+            <ion-textarea rows="6" cols="20" readonly="true" value="{{atividade.descricao}}"></ion-textarea>
+          </ion-item>
+
+          <div class="containerGenerico">
+            <ion-item>
+              <ion-button mode="ios"  (click)="fazerAtividade(atividade)">Refazer atividade<ion-icon style="margin-left: 10px;"  name="refresh-outline"></ion-icon></ion-button>
+            </ion-item>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</ion-content>

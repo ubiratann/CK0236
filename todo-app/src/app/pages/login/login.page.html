@@ -1,0 +1,30 @@
+
+<ion-content>
+  <div id="content">
+    <div id="login"  class="">
+      <div class="containerComBorda">
+
+        <ion-item class="containerComBorda">
+          <ion-label> Usuário: </ion-label>
+          <div class="containerGenerico">
+            <ion-input [(ngModel)]="usuario" placeholder="Insira seu nome de usuário." ></ion-input>
+          </div>
+        </ion-item>
+
+        <ion-item class="containerComBorda">
+          <ion-label> Senha: </ion-label>
+          <div class="containerGenerico">
+            <ion-input [(ngModel)]="senha" placeholder="Insira sua senha" type="password" ></ion-input>
+          </div>
+        </ion-item>
+
+        <div id="areaBotaoLogin" >
+          <ion-item>
+            <ion-button mode="ios" (click)="logar()">Login <ion-icon style="margin-left: 10px" name="log-in-outline"></ion-icon></ion-button>
+          </ion-item>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ion-content>
